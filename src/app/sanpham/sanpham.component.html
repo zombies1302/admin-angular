@@ -1,0 +1,100 @@
+<main style="margin-top: 58px">
+	<div class="container pt-4">
+		<h1 class="">Sản Phẩm</h1>
+		<button class="btn btn-info" data-mdb-toggle="modal" data-mdb-target="#themModal"><i class="fa-solid fa-plus me-2"></i>Thêm sản phẩm</button>
+		<!-- Modal -->
+		<div class="modal fade " id="themModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl">
+				<form #frm1="ngForm" (ngSubmit)="themsp(frm1.value)">
+
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Thêm Sản Phẩm</h5>
+							<button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-3">
+									<div class="mb-3">
+										<label for="code" class="form-label">Code</label>
+										<input name="code" type="text" class="form-control" id="code" placeholder="Nhập mã code..." ngModel>
+									</div>
+								</div>
+								<div class="col-5">
+									<div class="mb-3">
+										<label for="name" class="form-label">Tên Sản Phẩm</label>
+										<input name="name" type="text" class="form-control" id="name" placeholder="Nhập tên sản phẩm..." ngModel>
+									</div>
+								</div>
+								<div class="col-4">
+									<div class='mb-3'>
+										<label for="" class="form-label">Đơn vị</label>
+										<select name="weight_class" class="form-select" aria-label="Default select example" ngModel>
+											<option value="KG">KG</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-5">
+									<div class="mb-3">
+										<div>
+											<label for="motangan">Mô tả ngắn</label>
+											<textarea name="motangan" class="form-control" rows="4" placeholder="Nhập mô tả ngắn" id="motangan" ngModel></textarea>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-4">
+									<label for="">Loại</label>
+									<select multiple size="5" class="form-control" name="loai"  ngModel>
+										<option *ngFor="let loai of listLoai" value="{{loai.id}}">{{loai.name}}</option>
+									</select>
+								</div>
+								<div class="col-12 mt-3">
+									<div class="form-floating">
+										<textarea name="mota"  class="form-control" placeholder="Nhập mô tả..." id="mota" style="height: 100px" ngModel></textarea>
+										<label for="mota">Mô tả</label>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Đóng</button>
+							<button type="submit" class="btn btn-primary">Thêm</button>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Mã Sản Phẩm</th>
+					<th scope="col">Tên Sản Phẩm</th>
+					<th scope="col">ĐVT</th>
+					<th scope="col">Scan</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let sp of listSanPham">
+					<td>{{sp.id}}</td>
+
+					<td>{{sp.code}}</td>
+					<td>{{sp.name}}</td>
+					<td>{{sp.unit_name}}</td>
+
+
+
+					<td valign="middle">
+						<button class="btn btn-info btn-floating" ><i class="fas fa-edit"></i></button>
+						<a class="btn btn-danger btn-floating" (click)="deleteSanPham(sp.id)"><i class="far fa-trash-alt"></i></a>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+	</main>

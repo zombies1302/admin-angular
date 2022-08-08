@@ -1,0 +1,43 @@
+<main style="margin-top: 58px;margin-left:150px">
+	<div class="container pt-4">
+
+		<h1 class="">Thông Tin Tài Khoản</h1>
+		<div class="row">
+			<div class="col-4 shadow border rounded-5">
+				<div class="text-center my-4">
+					<img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 150px;"
+					alt="Avatar" />
+				</div>
+				<p class="nav-link text-dark bg-warning rounded-5 w-100">Thông Tin Cơ Bản</p>
+				<p class="nav-link text-dark  rounded-5 w-100">Đổi mật khẩu</p>
+
+			</div>
+			<div class="col-6 mx-5 shadow border rounded-5">
+				<div class="m-3">
+					<h4>Thông Tin Cá Nhân</h4>
+					<div class="form-group m-3">
+						<label for="taikhoan">Tài Khoản</label>
+						<input type="text" class="form-control form-control-lg" value={{userData.code}} id="taikhoan">
+					</div>
+					<div class="form-group m-3">
+						<label for="hoten">Họ Và Tên</label>
+						<input type="text" class="form-control form-control-lg" value={{userData.code}} id="hoten">
+					</div>
+					<div class="form-group m-3">
+						<label for="email">Email</label>
+						<input type="email" class="form-control form-control-lg" value={{userData.email}} id="email">
+					</div>
+					<div class="form-group m-3">
+						<label for="sdt">Số điện thoại</label>
+						<input type="number" class="form-control form-control-lg" value={{userData.phone}} id="sdt">
+					</div>
+					<button class="btn btn-info m-3"><i class="fa-solid fa-pen-to-square"></i> Cập Nhật</button>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+</main>
